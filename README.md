@@ -122,7 +122,6 @@ Thanks to Noam Nisan and Shimon Schocken for their dedicated work on the Nand to
 
 Website: https://www.nand2tetris.org/
 
-Course: 
 
 ## Contributing
 

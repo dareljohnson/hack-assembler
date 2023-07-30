@@ -4,7 +4,65 @@
 
 ## Project Description
 
-An assembler that translates hack assembly language to hack 16-bit machine language (binary) for the Hack computer.
+An assembler that translates Hack assembly language instructions to Hack 16-bit machine language (binary) for the Hack computer.
+
+## Example program
+
+An excerpt from an assembly program in a file called prog.asm.
+
+```
+// Adds 1 + ... + 100
+@i
+M=1 // i=1
+@sum
+M=0 // sum=0
+(LOOP)
+@i
+D=M // D=i
+@100
+D=D-A // D=i-100
+@END
+D;JGT // if (i-100)>0 goto END
+@i
+D=M // D=i
+@sum
+M=D+M // sum=sum+i
+@i
+M=M+1 // i=i+1
+@LOOP
+0;JMP // goto LOOP
+(END)
+@END
+0;JMP // infinite loop
+```
+
+## Example output
+
+The 16-bit machine code generated from running the Hack Assembler on prog.asm assembly file.
+
+```
+0000000000010000
+1110111111001000
+0000000000010001
+1110101010001000
+0000000000010000
+1111110000010000
+0000000001100100
+1110010011010000
+0000000000010100
+1110001100000001
+0000000000010000
+1111110000010000
+0000000000010001
+1111000010001000
+0000000000010000
+1111110111001000
+0000000000011000
+1110101010000111
+0000000000010100
+1110101010000111
+```
+
 
 ## Assumptions
 
@@ -60,7 +118,11 @@ dotnet build --configuration Release
 
 ## Include Credits
 
-TBA
+Thanks to Noam Nisan and Shimon Schocken for their dedicated work on the Nand to Tetris Companion: Building a Modern Computer from First Principles. 
+
+Website: https://www.nand2tetris.org/
+
+Course: 
 
 ## Contributing
 

@@ -121,6 +121,8 @@ dotnet run
 
 In the: C:\HackAssembler\HackAssembler\bin\Debug\net6.0 directory of your project.
 
+The default input and output files are prog.asm and prog.hack. You can use another filename to suit your needs. Make sure to use the .asm and .hack file extensions.
+
 ```
 HackAssembler --asm <inputfile.asm> --hack <outputfile.hack>
 ```

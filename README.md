@@ -93,7 +93,13 @@ You can clone this project.
 Requirements:
 
 - .NET 6.0 or higher
-- C# 8 or higher programming language
+- C# version 10 or higher programming language
+
+## Check the version of the SDK installed
+
+```
+dotnet sdk check
+```
 
 ## Build the project
 
@@ -127,7 +133,7 @@ HackAssembler --asm <inputfile.asm> --hack <outputfile.hack>
 dotnet build --configuration Release
 ```
 
-Built executable in the: C:\development\WorkSpaces\console_apps\HackAssembler\HackAssembler\bin\Release\net6.0
+Built executable in the: C:\HackAssembler\HackAssembler\bin\Release\net6.0
 
 
 ## Include Credits

@@ -97,6 +97,8 @@ Requirements:
 
 ## Build the project
 
+Change directory to: /HackAssembler\HackAssembler directory.
+
 ```
 dotnet build
 ```
@@ -106,8 +108,17 @@ dotnet build
 Run the local application:
 
 ```
+dotnet run
+```
+
+## Running the executable
+
+In the: C:\HackAssembler\HackAssembler\bin\Debug\net6.0 directory of your project.
+
+```
 HackAssembler --asm <inputfile.asm> --hack <outputfile.hack>
 ```
+
 
 ## How to Build the Project for production
 
@@ -115,6 +126,9 @@ HackAssembler --asm <inputfile.asm> --hack <outputfile.hack>
 ```
 dotnet build --configuration Release
 ```
+
+Built executable in the: C:\development\WorkSpaces\console_apps\HackAssembler\HackAssembler\bin\Release\net6.0
+
 
 ## Include Credits
 

@@ -34,7 +34,7 @@
             Models.HackAssembler assembler = new Models.HackAssembler();
             assembler.AssembleFile(inputFilePath, outputFilePath);
 
-            Console.WriteLine("Assembly code successfully assembled and written to 'prog.hack'.");
+            Console.WriteLine("Assembly code successfully assembled and written to: " + outputFilePath + " binary output.");
         }
     }
 }

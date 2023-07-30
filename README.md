@@ -6,6 +6,8 @@
 
 An assembler that translates Hack assembly language instructions to Hack 16-bit machine language (binary) for the Hack computer.
 
+Our assembler translates the symbolic instructions into binary micro-codes understood by the computer. This assembler performs parsing, symbol resolution, and code generation.
+
 ## Example program
 
 An excerpt from an assembly program in a file called prog.asm.

@@ -69,7 +69,8 @@
                 { "M-D", "000111" },
                 { "D&A", "000000" },
                 { "D&M", "000000" },
-                { "D|A", "010101" }
+                { "D|A", "010101" },
+                { "D|M", "010101" }
             };
 
             destTable = new Dictionary<string, string>
@@ -233,9 +234,9 @@
             // Additional logging for debugging
             //Console.WriteLine($"isNumeric?: {isNumeric}, value: {value}");
 
-            if (isNumeric || (comp == "D-A" || comp == "D"))
+            if (isNumeric || AEqualsZero(comp))
             {
-                // C instruction when A is 0 or D-A or D
+                // C instruction when A is 0 
                 return "1110" + compBinary + destBinary + jumpBinary;
             }
             else
@@ -244,6 +245,14 @@
                 return "1111" + compBinary + destBinary + jumpBinary;
             }
 
+        }
+
+        private static bool AEqualsZero(string comp)
+        {
+            return comp == "D" || comp == "A" || comp == "!D" || comp == "!A" 
+                || comp == "-D" || comp == "-A" || comp == "D+1" || comp == "A+1"
+                || comp == "D-1" || comp == "A-1" || comp == "D+A" || comp == "D-A"
+                || comp == "A-D" || comp == "D&A" || comp == "D|A";
         }
     }
 

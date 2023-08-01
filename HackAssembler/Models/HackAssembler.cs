@@ -228,13 +228,10 @@
             // Additional logging for debugging
             //Console.WriteLine($"Comp: {compBinary}, Dest: {destBinary}, Jump: {jumpBinary}");
 
-            int value;
-            bool isNumeric = int.TryParse(comp, out value);
-
             // Additional logging for debugging
             //Console.WriteLine($"isNumeric?: {isNumeric}, value: {value}");
 
-            if (isNumeric || AEqualsZero(comp))
+            if (IsValueNumeric(comp) || AEqualsZero(comp))
             {
                 // C instruction when A is 0 
                 return "1110" + compBinary + destBinary + jumpBinary;
@@ -245,6 +242,13 @@
                 return "1111" + compBinary + destBinary + jumpBinary;
             }
 
+        }
+
+        private static bool IsValueNumeric(string comp)
+        {
+            int value;
+            bool isNumeric = int.TryParse(comp, out value);
+            return isNumeric;
         }
 
         private static bool AEqualsZero(string comp)
